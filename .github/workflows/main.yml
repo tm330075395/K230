@@ -36,14 +36,14 @@ jobs:
           cname: aiyouhui.site
           
       # 下载build文件到服务器
-      - name: Deploy
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ HOST }}
-          username: ${{ USERNAME }}
-          password: ${{ POSSWORD }}
-          port: ${{ PORT }}
-          script: |
-            cd/C:\wwwroot\k210
-            del /Q *
-            git clone https://github.com/tm330075395/K230.git
+      # - name: Deploy
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ HOST }}
+      #     username: ${{ USERNAME }}
+      #     password: ${{ POSSWORD }}
+      #     port: ${{ PORT }}
+      #     script: |
+      #       cd/C:\wwwroot\k210
+      #       del /Q *
+      #       git clone https://github.com/tm330075395/K230.git
