@@ -1,0 +1,17 @@
+# 定义一个变量接收安装docker的版本
+VERSION_STRING=5:27.2.0-1~ubuntu.20.04~focal
+
+
+sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
+
+{
+"registry-mirrors":["https://alzgoonw.mirror.aliyuncs.com"]
+}
+
+export http_proxy=http://192.168.2.11:15732
+export https_proxy=https://192.168.2.11:15732
+export ftp_proxy=http://192.168.2.11:15732
+export no_proxy="localhost,127.0.0.1,::1"
+
+docker源
+https://docker.fxxk.dedyn.io
