@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: 部署到服务器
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout
+        uses: actions/checkout@master
+        
+      - name: checkout
+        uses: actions/setup-node@master
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build website
+        run: yarn build
+        
+      # Popular action to deploy to GitHub Pages:
+      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ TOKEN }}
+          # Build output to publish to the `gh-pages` branch:
+          publish_dir: ./build
+          cname: aiyouhui.site
+          
+      # 下载build文件到服务器
+      # - name: Deploy
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ HOST }}
+      #     username: ${{ USERNAME }}
+      #     password: ${{ POSSWORD }}
+      #     port: ${{ PORT }}
+      #     script: |
+      #       cd/C:\wwwroot\k210
+      #       del /Q *
+      #       git clone https://github.com/tm330075395/K230.git
