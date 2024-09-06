@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/ATK-Prod/ATK-k230/k230/blog","blogTitle":"Blog","authorsListPath":"/ATK-Prod/ATK-k230/k230/blog/authors"}')}}]);
