@@ -22,10 +22,12 @@ jobs:
         uses: actions/setup-node@main
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: 安装npm
-        run: curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-      - name: 安装node.js
-        run: sudo apt-get install -y nodejs
+      # - name: 安装npm
+      #   run: curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+      # - name: 安装node.js
+      #   run: sudo apt-get install -y nodejs
+      - name: Build website
+        run: yarn build
         
       - name: Build website
         run: npm run build
