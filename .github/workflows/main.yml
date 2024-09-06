@@ -46,4 +46,4 @@ jobs:
           script: |
             cd/C:\wwwroot\k210
             del /Q *
-            git
+            git clone https://github.com/tm330075395/K230.git
