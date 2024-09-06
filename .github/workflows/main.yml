@@ -23,7 +23,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: 安装npm
-        run: npm install
+        run: curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+      - name: 安装node.js
+        run: sudo apt-get install -y nodejs
         
       - name: Build website
         run: npm run build
