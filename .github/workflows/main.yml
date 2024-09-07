@@ -54,4 +54,5 @@ jobs:
           script: |
             cd /home/lio/k230
             del /Q *
-            git clone https://github.com/tm330075395/K230.git
+            git clone -b gh-pages https://github.com/tm330075395/K230.git
+
