@@ -1,0 +1,12 @@
+以部署网站为例
+1，将文件链接到GitHub actions
+2，配置GitHub actions信息（用到的服务器或者github的一些功能）
+	1，TOKEN （developer） 	github授权
+	2，设置github变量    用登录服务器，编写workflows文件。（在setting设置）
+	3，使用actions secrets
+	
+3，编写workflows文件
+	整体框架：
+	多个开发者---Github服务器---GitHub actions检测到触发事件---在github服务器完成一些编译或者构建工作然后推送到分支---用ssh-action登录自己的服务器，然后拉取github分支上的代码到指定路径
+	GitHub actions代码功能参考：https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith
+4，完成测试
