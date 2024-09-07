@@ -52,6 +52,6 @@ jobs:
           password: ${{ secrets.POSSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd/C:\wwwroot\k210
+            cd /home/lio/k230
             del /Q *
             git clone https://github.com/tm330075395/K230.git
