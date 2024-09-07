@@ -54,6 +54,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/lio/k230
-            sudo rm -rf *
+            rm -rf *
             git clone -b gh-pages https://github.com/tm330075395/K230.git
 
