@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   deploy:
-    name: 部署到服务器
+    name: 将更新后的文件重新编译并推送到分支
     runs-on: ubuntu-latest
     steps:
 
