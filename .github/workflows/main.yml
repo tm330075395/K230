@@ -90,5 +90,6 @@ jobs:
             rm -rf ./K230
             
             tar -xzvf K230.tar.gz
+            mv build K230
             # git clone -b gh-pages https://github.com/tm330075395/K230.git
 
