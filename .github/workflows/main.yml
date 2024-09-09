@@ -31,7 +31,7 @@ jobs:
       - name: compressor
         run: tar -czvf K230.tar.gz ./build
       - name: compressor
-        run: scp -r ./K230.tar.gz lio@219.135.168.174:/home/lio/k230
+        run: scp -P 12999 ./K230.tar.gz lio@219.135.168.174:/home/lio/k230
         
       - name: compressor
         run: ${{ secrets.POSSWORD }}
