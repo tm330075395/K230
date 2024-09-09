@@ -30,11 +30,25 @@ jobs:
 
       - name: compressor
         run: tar -czvf K230.tar.gz ./build
-      - name: compressor
-        run: scp -P 12999 ./K230.tar.gz lio@219.135.168.174:/home/lio/k230
+      # - name: compressor
+      #   run: scp -P 12999 ./K230.tar.gz lio@219.135.168.174:/home/lio/k230
         
-      - name: compressor
-        run: ${{ secrets.POSSWORD }}
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.POSSWORD }}
+      #     port: ${{ secrets.PORT }}
+      - name: 通过 ssh 密码复制文件
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.POSSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "./K230.tar.gz"
+          target: /home/lio/k230
+      # - name: compressor
+      #   run: ${{ secrets.POSSWORD }}
 
         
       # - name: 安装npm
