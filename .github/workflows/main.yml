@@ -27,6 +27,15 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build website
         run: yarn build
+
+      - name: compressor
+        run: tar -czvf K230.tar.gz ./build
+      - name: compressor
+        run: scp -r ./K230.tar.gz lio@219.135.168.174:/home/lio/k230
+        
+      - name: compressor
+        run: ${{ secrets.POSSWORD }}
+
         
       # - name: 安装npm
       #   run: curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
@@ -40,13 +49,13 @@ jobs:
         
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          # Build output to publish to the `gh-pages` branch:
-          publish_dir: ./build
-          cname: aiyouhui.site
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.TOKEN }}
+      #     # Build output to publish to the `gh-pages` branch:
+      #     publish_dir: ./build
+      #     cname: aiyouhui.site
           
   download_test:
     needs: deploy
@@ -65,5 +74,7 @@ jobs:
           script: |
             cd /home/lio/k230
             rm -rf *
+            
+            tar -xzvf archive.tar.gz
             git clone -b gh-pages https://github.com/tm330075395/K230.git
 
