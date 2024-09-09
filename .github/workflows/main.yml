@@ -48,6 +48,12 @@ jobs:
           publish_dir: ./build
           cname: aiyouhui.site
           
+  download_test:
+    needs: deploy
+    
+    name: 更新服务器文件
+    runs-on: ubuntu-latest
+    steps:
       # 下载build文件到服务器
       - name: Deploy
         uses: appleboy/ssh-action@master
