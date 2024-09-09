@@ -87,8 +87,8 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/lio/k230
-            rm -rf *
+            # rm -rf *
             
-            tar -xzvf archive.tar.gz
-            git clone -b gh-pages https://github.com/tm330075395/K230.git
+            # tar -xzvf archive.tar.gz
+            # git clone -b gh-pages https://github.com/tm330075395/K230.git
 
