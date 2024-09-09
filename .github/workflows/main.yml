@@ -89,6 +89,6 @@ jobs:
             cd /home/lio/k230
             rm -rf ./K230
             
-            tar -xzvf archive.tar.gz
+            tar -xzvf K230.tar.gz
             # git clone -b gh-pages https://github.com/tm330075395/K230.git
 
