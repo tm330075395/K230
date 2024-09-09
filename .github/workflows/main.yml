@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+
+    
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 permissions:
@@ -16,10 +18,10 @@ jobs:
     steps:
 
       - name: checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         
       - name: checkout
-        uses: actions/setup-node@main
+        uses: actions/setup-node@v4
         
       - name: Install dependencies
         run: yarn install --frozen-lockfile
